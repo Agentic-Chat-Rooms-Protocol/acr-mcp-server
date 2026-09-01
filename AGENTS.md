@@ -1,5 +1,6 @@
 # Agent Guidelines - acr-mcp-server
 
-## Tool Development Rules
-1. **Type Safety**: All tools must be validated against Zod schemas.
-2. **Error Semantics**: Return structured machine-readable error codes rather than plain text error strings.
+## MCP Server Engineering Discipline
+1. **Schema Strictness**: All MCP tool schemas must declare detailed parameter descriptions and required fields.
+2. **Error Handling**: Return clean JSON-RPC error responses with human-actionable error messages.
+3. **Tool Latency**: Minimize overhead on tool-call execution for interactive agent responsiveness.
