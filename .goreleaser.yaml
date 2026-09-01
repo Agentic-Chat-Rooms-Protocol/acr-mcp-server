@@ -1,0 +1,54 @@
+# .goreleaser.yaml for acr-mcp-server (ACR Standalone MCP Server)
+version: 2
+
+project_name: acr-mcp-server
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: acr-mcp-server
+    main: ./main.go
+    binary: acr-mcp-server
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
+
+archives:
+  - name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - README.md
+      - LICENSE
+      - SECURITY.md
+
+checksum:
+  name_template: 'checksums.txt'
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - Merge pull request
+      - Merge branch
+
+release:
+  github:
+    owner: Agentic-Chat-Rooms-Protocol
+    name: acr-mcp-server
+  draft: false
+  prerelease: auto

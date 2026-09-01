@@ -1,0 +1,6 @@
+26c4c7956f2ff2e1287a36f69635883971a44d6c5d13fa8ad472b124b81e1e69  acr-mcp-server_1.0.0_windows_amd64.zip
+c9530c7b84fff3cd7cdc4783b6a1d24872205014f8056977d9728db93308373b  acr-mcp-server_1.0.0_windows_arm64.zip
+baee23a4ad4ce4e027d643d8e3a61b6ab4df03ae1c54bdbb72579fd2d1352544  acr-mcp-server_1.0.0_linux_amd64.tar.gz
+090a4ddc52b2808a3bcb3b91fa3b4eba2f9f0df94acc3c1fb5c7b13f1ec383b8  acr-mcp-server_1.0.0_linux_arm64.tar.gz
+fbfae3b4a7b195f735f5a1ec78ebd88e0226fd9e321e7059a363df57e9ec65f7  acr-mcp-server_1.0.0_darwin_amd64.tar.gz
+b7a90de6c4af41692da07c5569bde61b880b4a84222e36b86afbc1984c4fed56  acr-mcp-server_1.0.0_darwin_arm64.tar.gz
