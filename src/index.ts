@@ -4,7 +4,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
 const server = new Server(
-  { name: "acr-mcp-server", version: "0.8.2" },
+  { name: "acr-mcp-server", version: "1.1.0" },
   { capabilities: { tools: {} } }
 );
 

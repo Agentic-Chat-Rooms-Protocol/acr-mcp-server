@@ -1,11 +1,12 @@
 {
-  "name": "@acr/mcp-server",
-  "version": "0.8.2",
+  "name": "@acr-js/mcp-server",
+  "version": "1.1.0",
   "description": "Model Context Protocol (MCP) server for Agentic Chat Rooms deliberation",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "test": "npm run build && node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",

@@ -9,7 +9,7 @@ before:
 
 builds:
   - id: acr-mcp-server
-    main: ./main.go
+    main: .
     binary: acr-mcp-server
     env:
       - CGO_ENABLED=0
@@ -20,11 +20,16 @@ builds:
     goarch:
       - amd64
       - arm64
+    flags:
+      - -trimpath
     ldflags:
       - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
 
 archives:
-  - name_template: >-
+  - id: default
+    builds:
+      - acr-mcp-server
+    name_template: >-
       {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
     format_overrides:
       - goos: windows
@@ -36,6 +41,10 @@ archives:
 
 checksum:
   name_template: 'checksums.txt'
+  algorithm: sha256
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-snapshot"
 
 changelog:
   sort: asc
@@ -43,6 +52,7 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+      - '^chore:'
       - Merge pull request
       - Merge branch
 

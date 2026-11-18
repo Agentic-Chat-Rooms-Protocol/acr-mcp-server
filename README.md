@@ -15,11 +15,17 @@ Model Context Protocol (MCP) Server for Integrating Claude, Antigravity, and AI 
 
 ## Quick Start
 ```bash
-git clone http://localhost:3300/ACR/acr-mcp-server.git
+git clone https://github.com/Agentic-Chat-Rooms-Protocol/acr-mcp-server.git
 cd acr-mcp-server
 npm install
 npm test
+go test ./...
 ```
+
+## Daemon Connection & Local Security
+- **Default Daemon URL**: `http://127.0.0.1:20443` (validated via strict loopback-only `ValidateLocal`; override via `ACR_DAEMON_URL`).
+- **Local API Token**: Reads `ACR_API_TOKEN`, falling back to `~/.acr/api-token`, and sends `Authorization: Bearer <token>` on every daemon request.
+- **Redirect Protection**: HTTP redirects (`3xx`) are rejected and never followed.
 
 ## Governance & Community
 - [Code of Conduct](CODE_OF_CONDUCT.md)
